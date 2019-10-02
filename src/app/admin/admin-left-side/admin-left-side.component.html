@@ -1,0 +1,53 @@
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar boxcont">
+    <div *ngIf="(alunos$ | async) as alunos">
+      <ul class="sidebar-menu">
+        <!-- <li class="header">Alunos</li>
+        <li class="treeview" *ngFor="let aluno of alunos.aluno">
+            <a href="#" >
+              <img onerror="this.src='assets/img/Personagens.png'" src="aluno.urlFoto" class="aluno-image icone" alt="Imagem aluno">
+              <span>{{aluno.nome | titlecase }}</span>
+              </a>
+          </li> -->
+        <li class="header">Matriculas</li>
+        <li class="treeview">
+            <a href="#" [routerLink]="['/admin/home','regular']">
+              <i class="fas fa-user-graduate icone"></i> 
+              <span>Curso Regular</span>
+            </a>
+        </li>
+        <li class="treeview">
+            <a href="#" [routerLink]="['/admin/home','extracurricular']">
+              <i class="fas fa-user-graduate icone"></i> 
+              <span>Curso Extracurricular</span>
+            </a>
+        </li>
+        <!-- <li class="header">Loja</li>
+        <li class="treeview">
+          <a href="#" [routerLink]="['/admin/produtos/lista']"  >
+              <i class="fas fa-book-open icone"></i>
+              <span>Materiais</span>
+            </a>
+        </li>
+        <li>
+          <a href="#" [routerLink]="['/admin/produtos/lista']">
+            <i class="fas fa-ticket-alt icone"></i> 
+            <span>Eventos</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" [routerLink]="['/admin/produtos/lista']">
+              <i class="fas fa-running icone"></i>
+              <span>NCE</span>
+              </a>
+          </li> -->
+        <li class="header">Perfil</li>
+        <li><a href="#" [routerLink]="['/admin/boletos']"><i class="fas fa-receipt icone"></i> <span>Financeiro</span></a></li>
+        <!-- <li><a href="#" [routerLink]="['/admin/historicoCompras']"><i class="fas fa-history icone"></i> <span>Histórico de compras</span></a></li> -->
+        <li><a href="#" [routerLink]="['/admin/perfil']"><i class="fas fa-user-circle icone"></i> <span>Meu perfil</span></a></li>
+      </ul>
+    </div>
+  </section>
+  <!-- /.sidebar -->
+</aside>

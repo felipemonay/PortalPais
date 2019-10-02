@@ -1,0 +1,54 @@
+<header class="main-header">
+  <div class="hidden-xs">
+    <!-- Logo -->
+    <a href="#" class="logo " >
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini hidden-xs"><img class="logoM" src="assets/img/logo_mini2.png"/></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg hidden-xs"><img class="logoT" src="assets/img/logo_branco.png"></span>
+    </a>
+  </div>
+    <!-- Header Navbar: style can be found in header.less -->
+  <nav class="navbar" style="max-height: 50px">
+
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini hidden-sm hidden-md hidden-lg"><a href=""><img  class="logo-xs" src="assets/img/logo_mini2.png" /></a></span>
+
+    <!-- Sidebar toggle button-->
+    <a href="#" class="sidebar-toggle "  data-toggle="offcanvas" role="button">
+      <span class="sr-only left">Toggle navigation</span>
+    </a>
+
+    <ul class="navbar-nav d-inline mr-3" >
+
+      <!-- <li class="nav-item hidden-xs"><a href="#" [routerLink]="['/admin/carrinho']"><i class="fa fa-shopping-cart fa-lg"></i>
+        <span class="label label-success">{{qtdAlterada}}</span></a><li>
+      <li class="nav-item mr-5 hidden-lg hidden-md hidden-sm"><a href="#" [routerLink]="['/admin/carrinho']"><i class="fa fa-shopping-cart fa-lg"></i>
+        <span class="label label-success">{{qtdAlterada}}</span></a><li> -->
+          
+      <!-- Messages: style can be found in dropdown.less-->
+      <li class="nav-item dropdown user user-menu">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img onerror="this.src='assets/img/profile-icon.png'" src="{{profile?.urlFoto}}" class="user-image hidden-xs" alt="User Image">
+              <span class="hidden-xs">{{profile?.nome | titlecase}}</span>
+          </a>
+      
+        <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+          <!-- User image -->
+          <li class="user-header">
+            <img onerror="this.src='assets/img/profile-icon.png'" src="{{profile?.urlFoto}}" class="img-circle" alt="User Image">
+            <p>{{profile?.nome | titlecase}}</p>
+          </li>
+          <!-- Menu Body -->
+          <!-- Menu Footer-->
+          <li class="user-footer center">
+            <button class="btn-resp btn-default btn-flat pull-left" [routerLink]="['/admin/perfil']">Perfil</button>
+            <!-- <button class="btn-resp btn-default btn-flat" [routerLink]="['/admin/historicoCompras']">Peding sdos</button> -->
+            <button class="btn-resp btn-default btn-flat pull-right" (click)="logout($event)">Sair</button>
+          </li>
+
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>

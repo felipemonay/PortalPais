@@ -1,0 +1,59 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div *ngIf="(alunos$ | async) as alunos">
+      <h2 style="border-bottom: 1px solid black" *ngIf="alunos.propostaMatricula.length">Rematrículas</h2>
+      <div class="posicao mt-2">
+        <div class="card mx-4 my-3" *ngFor="let aluno of alunos.propostaMatricula">
+          <img class="card-img-top" onerror="this.src='assets/img/Personagens.png'" src="{{aluno.urlfoto}}" alt="produto">
+          <div class="card-body">
+            <h4 class="card-title"><b>{{aluno.nome}}</b></h4>
+            <small>
+              <p class="card-text">{{aluno.turma}} - {{aluno.PeriodoLetivo}}</p>
+            </small>
+          </div>
+          <div class="card-footer">
+            <div class="col-12" center>
+              <button class="btnComprar vermelho mt-2 py-2" *ngIf="!aluno.confirmada && !aluno.bloqueio"  (click)="navigateTo('/admin/matricula/aluno', aluno)">Rematricular</button>
+                <!-- Button trigger modal -->
+              <button type="button" class="btnComprar vermelho mt-2 py-2" *ngIf="!aluno.confirmada && aluno.bloqueio" (click)="open(aluno.descricao, aluno.mensagem)">
+                Rematricular
+              </button>
+              <button class="btnComprar verde mt-2 py-2" *ngIf="aluno.confirmada" disabled>Matriculado</button>
+              <!-- <button class="btnComprar vermelho mb-2 mt-4 py-2" [routerLink]="['/admin/produtos']">Loja</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 style="border-bottom: 1px solid black" *ngIf="alunos.matricula.length">Matrículas efetivadas</h2>
+      <div class="posicao mt-2">
+        <div class="card mx-4 my-3" *ngFor="let aluno of alunos.matricula">
+          <img class="card-img-top" onerror="this.src='assets/img/Personagens.png'" src="{{aluno.urlfoto}}" alt="produto">
+          <div class="card-body">
+            <h4 class="card-title"><b>{{aluno.nome}}</b></h4>
+            <small>
+              <p class="card-text">{{aluno.turma}} - {{aluno.PeriodoLetivo}}</p>
+            </small>
+          </div>
+          <div class="card-footer">
+            <div class="col-12" center>
+              <button class="btnComprar vermelho mt-2 py-2" *ngIf="!aluno.confirmada && !aluno.bloqueio"  (click)="navigateTo('/admin/matricula/aluno', aluno)">Rematricular</button>
+                <!-- Button trigger modal -->
+              <button type="button" class="btnComprar vermelho mt-2 py-2" *ngIf="!aluno.confirmada && aluno.bloqueio" (click)="open(aluno.descricao, aluno.mensagem)">
+                Rematricular
+              </button>
+              <button class="btnComprar verde mt-2 py-2" *ngIf="aluno.confirmada" disabled>Matriculado</button>
+              <!-- <button class="btnComprar vermelho mb-2 mt-4 py-2" [routerLink]="['/admin/produtos']">Loja</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /.content -->
+</div>

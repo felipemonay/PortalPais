@@ -1,0 +1,85 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+      <h2 style="border-bottom: 1px solid black">Histórico de compras</h2>
+      <!-- <div style="text-align: center" *ngFor="let compra of historicoCompras">
+        <div class="card mt-1 col-5 " style="display: inline-table;min-width: 90%;max-width: 90%" >
+          <div class="row no-gutters">
+            <div class="col" style="height: auto;" >
+              <div class="card-block px-2 py-2" style="display:flex;height: 100%;align-items: center;" >
+                <div class="col-3">
+                  {{ compra.descricao }}
+                </div>
+                <div class="col-2">
+                  <small>{{ compra.nome }}</small>
+                </div>
+                <div class="col-2">
+                  {{ compra.valorVenda | currency:'BRL':'symbol':'1.2-2' }}
+                </div>
+                <div class="col-2">
+                  <small>{{ compra.formaPagamento }}</small>
+                </div>
+                <div class="col-2" [ngStyle]="{'background-color':compra.quitado === 'Quitado' ? '#0de8848f' : 
+                compra.quitado === 'Pendente' ? '#fbff008f' : '#ff2f008f' }">
+                  {{ compra.quitado }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+  <!-- <section class="content">
+    <h2 style="border-bottom: 1px solid black">Histórico de compras</h2>
+    <div style="text-align: center" *ngFor="let compra of historicoCompras">
+      <div class="card mt-3 col-5 " style="display: inline-table;min-width: 80%;max-width: 80%" [ngStyle]="{'background-color':compra.quitado === 'Quitado' ? '#0de8848f' : 
+      compra.quitado === 'Pendente' ? '#fbff008f' : '#ff2f008f' }">
+        <div class="row no-gutters">
+          <div class="col" style="height: auto;" >
+            <div class="card-block px-2 py-2" style="display:flex;height: 100%;align-items: center;" >
+              <div class="col-5">
+                {{ compra.descricao }}<br>
+                <small>{{ compra.nome }}</small>
+              </div>
+              <div class="col-4">
+                  <small>{{ compra.valorVenda | currency:'BRL':'symbol':'1.2-2' }}<br>
+                {{ compra.formaPagamento }}</small>
+              </div>
+              <div class="col-3" >
+                {{ compra.quitado }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    
+    <div class="cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));">
+      <div class="card mx-4 my-3" *ngFor="let compra of historicoCompras">
+        <div class="card-header" >
+          <h5 class="card-title" style="text-align: -webkit-center; text-align: -moz-center;"><b>{{compra.descricao}}</b></h5>
+        </div>
+          <div class="card-body">
+          <small>
+            <p><b style="padding-bottom: -4rem;">Aluno:</b><br>
+            {{compra.nome}}</p>
+          <p><b>Forma de pagamento:</b><br>
+            {{compra.formaPagamento}}</p>
+          </small>
+        </div>
+        <div class="card-footer" [ngStyle]="{'background-color':compra.quitado === 'Quitado' ? '#0de8848f' : 
+          compra.quitado === 'Pendente' ? '#fbff008f' : '#ff2f008f' }">
+          <b style="float: left">{{compra.valorVenda | currency:'BRL':'symbol':'1.2-2'}}</b>
+          <span style="float: right"><small>{{ compra.quitado }}</small></span>
+        </div>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- /.content -->
+
+

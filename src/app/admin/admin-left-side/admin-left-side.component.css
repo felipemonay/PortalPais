@@ -1,0 +1,33 @@
+.panelAluno{
+    height: auto !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    width: auto !important;
+    background-color: #E4E4E4 !important;
+    border-radius: 10px !important;
+}
+
+.icone{
+    margin-right: 10px;
+
+}
+
+.aluno-image{
+    float:left;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+}
+
+a{
+    min-height: 44px;
+}
+
+span{
+    white-space: normal;
+}
+
+.boxcont{
+    height:100%;
+    overflow:auto;
+  }

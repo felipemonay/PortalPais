@@ -1,0 +1,48 @@
+<div class="content-wrapper">
+    <section class="content-header">
+    </section>
+    <section class="content">
+      <form [formGroup]="f" novalidate>
+        <!-- Produto -->
+        <div class="card my-4">
+            <div class="card-header">
+                <h4>{{ (eventos.descricaoVenda)?eventos.descricaoVenda:eventos.descricao }}</h4>
+            </div>
+            <div class="card-body">
+              <div >
+                <img class="imgProduto" onerror="this.src='assets/img/produtos/4.jpg'" src="eventos?.imgproduto" alt="produto">
+              </div>
+              <div class="boxcont">
+                  {{ eventos.detalhes }}
+              </div>
+            </div>
+            <div class="card-footer" style="text-align: center">
+                 Valor: {{ eventos.precoVenda | currency:'BRL':'symbol':'1.2-2' }}
+            </div>
+        </div>
+        <!-- Termos -->
+        <div class="card my-4">
+          <div class="card-header">
+              <h4>Termos de Adesão</h4>
+          </div>
+          <div class="card-body" style="text-align: -webkit-center;text-align: -moz-center;">
+            <div class="boxcont">
+                {{eventos.termoadesao}} 
+            </div>
+            <input
+            class="mt-4"
+            type="checkbox"
+            formControlName="termoAdesao"
+            />
+          Aceito os termos de adesão.
+          </div>
+        </div>
+        <div class="col-12 center" >
+          <button class="btn btnAdd" id="proximo-btn" name="proximo" type="submit" (click)="onSubmit()">Adicionar ao carrinho</button>
+        </div>
+      </form>
+    </section> 
+    <!-- <app-form-debug [form]="f"></app-form-debug> -->
+  </div>
+
+ 

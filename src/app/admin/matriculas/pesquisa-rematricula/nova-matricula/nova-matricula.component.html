@@ -1,0 +1,81 @@
+<div class="content-wrapper">
+    <section class="content-header">
+    </section>
+    <section class="content">
+        <div class="card col-sm-12">
+          <form [formGroup]="f" novalidate>
+            <div class="cardHeader">
+              <h3>Pesquisar</h3>
+            </div>
+            <div class="cardBody">
+              <div class="col-sm-3">
+                <label>Unidade</label>
+                <select
+                 formControlName="idUnidade"
+                 class="form-control"
+                 >
+                  <option value>Selecione...</option>
+                  <option *ngFor="let item of listaUnidades" [value]="item.idUnidade"> {{item.descricao}}</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+                  <label>Curso</label>
+                  <select 
+                  class="form-control"
+                  formControlName="idCurso"
+                  >
+                    <option value>Selecione...</option>
+                    <option *ngFor="let item of listaCursos" [value]="item.idCurso"> {{item.descricao}}</option>
+                  </select>
+                  
+                </div>
+                <div class="col-sm-2">
+                    <label>Periodo Letivo</label>
+                    <select 
+                      class="form-control"
+                      formControlName="idPeriodoLetivo"
+                    >
+                      <option value>Selecione...</option>
+                      <option *ngFor="let item of listaPeriodosLetivos" [value]="item.idPeriodoLetivo "> {{item.descricao}}</option>
+                    </select>
+                    
+                  </div>
+              <div class="col-sm-2">
+                <label>Serie</label>
+                <select 
+                  formControlName="idSerie"
+                  class="form-control"
+                >
+                  <option value>Selecione...</option>
+                  <option *ngFor="let item of listaSeries" [value]="item.idSerie"> {{item.descricao}}</option>
+                </select>
+                
+              </div>
+              <div class="col-sm-2">
+                <label>Turma</label>
+                <select 
+                formControlName="idTurma"
+                class="form-control"
+                >
+                  <option value>Selecione...</option>
+                  <option *ngFor="let item of listaTurmas" [value]="item.idTurma"> {{item.descricao}}</option>
+                </select>
+              </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>  
+            <button
+              class="btn btn-prox"
+              id="proximo-btn"
+              type="submit"
+              (click)="onSubmit()"
+              >
+              Próximo
+            </button>
+          </form>
+        </div>
+    </section> 
+    <!-- <app-form-debug [form]="f"></app-form-debug> -->
+  </div>

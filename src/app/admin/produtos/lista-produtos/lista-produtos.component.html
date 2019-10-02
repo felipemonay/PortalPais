@@ -1,0 +1,84 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <h2 style="border-bottom: 1px solid black" *ngIf="listaMateriais.length">Materiais</h2>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(200px,1fr));">
+      <div class="card mx-4 my-3" *ngFor="let produto of listaMateriais">
+        <img class="card-img-top" (error)="imagem(produto.idcategorialoja, $event)" src="{{ produto.imgproduto }}" alt="produto">
+        <div class="card-body">
+          <h4 class="card-title"><b>{{produto.descricao}}</b></h4>
+          <small>
+            <p class="card-text">{{produto.nome}}</p>
+            <p class="card-text">{{produto.turma}} - {{produto.periodoLetivo}}</p>
+        </small>
+      </div>
+      <div class="card-footer">
+        {{ produto.valorVenda | currency:'BRL':'symbol':'1.2-2' }}
+        <button class="btnComprar vermelho" (click)="comprar(produto)" *ngIf="!produto.comprado" >Comprar</button>
+        <button class="btnComprar verde" *ngIf="produto.comprado" disabled>Comprado</button>
+      </div>
+      </div>
+    </div>
+    <h2 style="border-bottom: 1px  solid black" *ngIf="listaNCE.length">Núcleo Cultural Esportivo</h2>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(200px,1fr));">
+      <div class="card mx-4 my-3" *ngFor="let produto of listaNCE">
+        <img class="card-img-top" (error)="imagem(produto.idcategorialoja, $event)" src="{{ produto.imgproduto }}" alt="produto">
+        <div class="card-body">
+          <h4 class="card-title"><b>{{produto.descricao}}</b></h4>
+          <small>
+            <p class="card-text">{{produto.nome}}</p>
+            <p class="card-text">{{produto.turma}} - {{produto.periodoLetivo}}</p>
+        </small>
+      </div>
+      <div class="card-footer">
+        {{ produto.valorVenda | currency:'BRL':'symbol':'1.2-2' }}
+        <button class="btnComprar vermelho" (click)="comprar(produto)" *ngIf="!produto.comprado" >Comprar</button>
+        <button class="btnComprar verde" *ngIf="produto.comprado" disabled>Comprado</button>
+        </div>
+      </div>
+    </div>
+    <h2 style="border-bottom: 1px  solid black" *ngIf="listaEventos.length">Eventos</h2>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(200px,1fr));">
+      <div class="card mx-4 my-3" *ngFor="let produto of listaEventos">
+        <img class="card-img-top" (error)="imagem(produto.idcategorialoja, $event)" src="{{ produto.imgproduto }}" alt="produto">
+        <div class="card-body">
+          <h4 class="card-title"><b>{{produto.descricao}}</b></h4>
+          <small>
+            <p class="card-text">{{produto.nome}}</p>
+            <p class="card-text">{{produto.turma}} - {{produto.periodoLetivo}}</p>
+        </small>
+      </div>
+      <div class="card-footer">
+        {{ produto.valorVenda | currency:'BRL':'symbol':'1.2-2' }}
+        <button class="btnComprar vermelho" (click)="comprar(produto)" *ngIf="!produto.comprado" >Comprar</button>
+        <button class="btnComprar verde" *ngIf="produto.comprado" disabled>Comprado</button>
+        </div>
+      </div>
+    </div>
+    <h2 style="border-bottom: 1px  solid black" *ngIf="listaCursoFerias.length">Ferias</h2>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(200px,1fr));">
+      <div class="card mx-4 my-3" *ngFor="let produto of listaCursoFerias">
+        <img class="card-img-top" (error)="imagem(produto.idcategorialoja, $event)" src="{{ produto.imgproduto }}" alt="produto">
+        <div class="card-body">
+          <h4 class="card-title"><b>{{produto.descricao}}</b></h4>
+          <small>
+            <p class="card-text">{{produto.nome}}</p>
+            <p class="card-text">{{produto.turma}} - {{produto.periodoLetivo}}</p>
+        </small>
+      </div>
+      <div class="card-footer">
+        {{ produto.valorVenda | currency:'BRL':'symbol':'1.2-2' }}
+        <button class="btnComprar vermelho" (click)="comprar(produto)" *ngIf="!produto.comprado" >Comprar</button>
+        <button class="btnComprar verde" *ngIf="produto.comprado" disabled>Comprado</button>
+        </div>
+      </div>
+    </div>
+  </section> 
+</div>
+<!-- /.content -->
+
+

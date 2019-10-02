@@ -1,0 +1,33 @@
+<div class="content-wrapper">
+    <section class="content-header">
+    </section>
+    <section class="content">
+      <form [formGroup]="f" novalidate>
+        <!-- Produto -->
+        <div class="card my-4">
+            <div class="card-header">
+                <h4>{{ (material.descricaoVenda)?material.descricaoVenda:material.descricao }}</h4>
+            </div>
+            <div class="card-body">
+              <div >
+                <img class="imgProduto" onerror="this.src='assets/img/produtos/4.jpg'" src="material?.imgproduto" alt="produto">
+              </div>
+              <div class="boxcont">
+                <div style="border-bottom: 1px solid #ccc" *ngFor="let item of material?.itens">
+                  {{item.descricao}}
+                </div>
+              </div>
+            </div>
+            <div class="card-footer" style="text-align: center">
+                Valor: {{ material.precoVenda | currency:'BRL':'symbol':'1.2-2' }}
+           </div>
+        </div>
+        <div class="col-12 center" >
+          <button class="btn btnAdd" id="proximo-btn" name="proximo" type="submit" (click)="onSubmit()">Adicionar ao carrinho</button>
+        </div>
+      </form>
+    </section> 
+    <app-form-debug [form]="f"></app-form-debug>
+  </div>
+
+ 

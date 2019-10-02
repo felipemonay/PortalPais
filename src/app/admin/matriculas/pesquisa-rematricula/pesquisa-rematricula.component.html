@@ -1,0 +1,101 @@
+<div class="content-wrapper">
+  <section class="content-header">
+  </section>
+  <section class="content">
+      <div class="card col-sm-12">
+          <div class="cardHeader">
+              <h3>Pesquisar</h3>
+          </div>
+          <div class="cardBody">
+            <div class="col-sm-3">
+              <label>Aluno</label>
+              <input class="form-control" 
+              [(ngModel)]="nome"
+              type="search" 
+              placeholder="Buscar..."
+              (keyup) = "debounce.next($event.target.value)"
+              />
+            </div>
+            <div class="col-sm-3">
+              <label>Unidade</label>
+              <select
+               class="form-control"
+               (change)="filtraAluno()"
+               >
+                <option value>Selecione...</option>
+                <option *ngFor="let item of listaUnidades" [value]="item.idUnidade"> {{item.descricao}}</option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <label>Serie</label>
+              <select 
+              class="form-control"
+              (change)="filtraAluno()"
+              >
+                <option value>Selecione...</option>
+                <option *ngFor="let item of listaSeries" [value]="item.idSerie"> {{item.descricao}}</option>
+              </select>
+              
+            </div>
+            <div class="col-sm-3">
+              <label>Turma</label>
+              <select 
+              [(ngModel)]="turma"
+              class="form-control"
+              (change)="filtraAluno()"
+              >
+                <option value>Selecione...</option>
+                <option *ngFor="let item of listaTurmas" [value]="item.idTurma"> {{item.descricao}}</option>
+              </select>
+            </div>
+          </div>
+      </div>
+      <div class="card col-sm-12">
+          <div class="cardHeader">
+              <h3>Lista de rematriculas
+              <i class="fas fa-user-plus fa-md direita" [routerLink]="['../novaMatricula']"></i>
+              </h3>
+          </div>
+          <div class="cardBody">
+              <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+                  <thead>
+                    <tr>
+                        <th class="col-sm-4">Aluno</th>
+                        <th class="col-sm-2">Unidade</th>
+                        <th class="col-sm-2">Serie</th>
+                        <th class="col-sm-2">Turma</th>
+                        <th class="col-sm-2">Rematricular</th>
+                        <th class="col-sm-2">Loja</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let aluno of lista">
+                      <td class="col-sm-4">
+                        <div>
+                            {{ aluno.aluno | titlecase}}
+                        </div>
+                      </td>
+                      <td class="col-sm-2">
+                        <div>
+                            {{ aluno.unidade }}
+                        </div>
+                      </td>
+                      <td class="col-sm-2">
+                          {{ aluno.serie }}
+                      </td>
+                      <td class="col-sm-2">
+                          {{ aluno.turma }}
+                      </td>
+                      <td class="col-sm-2" center>
+                          <i class="fas fa-user-graduate fa-lg" [routerLink]="['/admin/matricula/aluno',{idMatricula: aluno.idMatricula}]"></i>
+                      </td>
+                      <td class="col-sm-2">
+                          <i class="fas fa-store fa-lg" [routerLink]="['/admin/produtos',{idPessoa: aluno.idPessoaAluno}]"></i>
+                      </td> 
+                    </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </section> 
+</div>

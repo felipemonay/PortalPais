@@ -1,0 +1,40 @@
+.botaoModal {
+    background-color: #ED1C24!important;
+    color: #fff!important;
+    font-family: 'Chivo';
+    font-size: 15px;
+    border: none;
+    padding: 6px 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 4px;
+}
+
+.modal-body{
+    text-align: center;
+}
+
+// @media screen {
+//     #printSection {
+//         display: none;
+//     }
+//   }
+  
+//   @media print {
+//     body * {
+//       visibility:hidden;
+//     }
+//     #printSection, #printSection * {
+//       visibility:visible;
+//     }
+//     #printSection {
+//       position:absolute;
+//       left:0;
+//       top:0;
+//     }
+//   }
+  
+  
+  
