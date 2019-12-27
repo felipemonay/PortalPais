@@ -1,4 +1,4 @@
-Primeiro projeto feio em angular, juntamente com oportal de gestão.
+Primeiro projeto feio em angular, juntamente com o portal de gestão. Foi desenvolvido enquando aprendia a usar o angular e, atualmente, o utilizo de forma muito melhor.
 
 Projeto feito a partir do template do AdminLTE.
 
